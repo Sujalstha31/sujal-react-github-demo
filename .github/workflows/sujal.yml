@@ -1,0 +1,24 @@
+name: CI Workflow
+
+on: 
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
+jobs:
+  build:
+      runs-on: ubuntu_latest
+
+      steps:
+       - name : Check out repository
+         uses: actions/cehcout@v3
+
+       - name: Set up Node.js
+         uses: actions/setup-nove@v3
+         with:
+           node-version: '18'
+       - name: Install dependeinces
+         run : npm Install
+       
